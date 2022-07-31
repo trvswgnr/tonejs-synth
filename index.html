@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app">
+		<audio class="audio-player" controls></audio>
+		<div id="synth-controller" class="keyboard">
+			<h1>• Synth •</h1>
+			<div class="keys"></div>
+			<div class="controls">
+				<div>
+					<meter class="meter"
+						min="-60" max="0"
+						low="-10" high="-1" optimum="-60"
+						value="-60">
+					</meter>
+				</div>
+
+				<div class="transport">
+					<button type="button" class="record">Record</button>
+				</div>
+				<div class="volume">
+					<h2>Volume</h2>
+					<input type="range" min="-30" max="0" step="2" value="-5" class="range" />
+					
+				</div>
+				<div class="octave">
+					<h2>Octave</h2>
+					<div class="switch-group">
+						<div class="switch down">-</div>
+						<div class="switch up">+</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "tonejs-synth-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^3.0.0"
+  },
+  "dependencies": {
+    "tone": "^14.7.77"
+  }
+}
