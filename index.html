@@ -8,35 +8,25 @@
   </head>
   <body>
     <div id="app">
-		<audio class="audio-player" controls></audio>
-		<div id="synth-controller" class="keyboard">
-			<h1>• Synth •</h1>
-			<div class="keys"></div>
-			<div class="controls">
-				<div>
-					<meter class="meter"
-						min="-60" max="0"
-						low="-10" high="-1" optimum="-60"
-						value="-60">
-					</meter>
-				</div>
-
-				<div class="transport">
-					<button type="button" class="record">Record</button>
-				</div>
-				<div class="volume">
-					<h2>Volume</h2>
-					<input type="range" min="-30" max="0" step="2" value="-5" class="range" />
-					
-				</div>
-				<div class="octave">
-					<h2>Octave</h2>
-					<div class="switch-group">
-						<div class="switch down">-</div>
-						<div class="switch up">+</div>
-					</div>
-				</div>
-			</div>
+		<div class="piano">
+			<div class="key white" data-note="C3" data-key="a"></div>
+			<div class="key black" data-note="C#3" data-key="w"></div>
+			<div class="key white" data-note="D3" data-key="s"></div>
+			<div class="key black" data-note="D#3" data-key="e"></div>
+			<div class="key white" data-note="E3" data-key="d"></div>
+			<div class="key white" data-note="F3" data-key="f"></div>
+			<div class="key black" data-note="F#3" data-key="t"></div>
+			<div class="key white" data-note="G3" data-key="g"></div>
+			<div class="key black" data-note="G#3" data-key="y"></div>
+			<div class="key white" data-note="A3" data-key="h"></div>
+			<div class="key black" data-note="A#3" data-key="u"></div>
+			<div class="key white" data-note="B3" data-key="j"></div>
+			<div class="key white" data-note="C4" data-key="k"></div>
+			<div class="key black" data-note="C#4" data-key="o"></div>
+			<div class="key white" data-note="D4" data-key="l"></div>
+			<div class="key black" data-note="D#4" data-key="p"></div>
+			<div class="key white" data-note="E4" data-key=";"></div>
+			<div class="key white" data-note="F4" data-key="'"></div>
 		</div>
 	</div>
     <script type="module" src="/main.js"></script>

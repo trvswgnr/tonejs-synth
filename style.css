@@ -9,218 +9,34 @@ body {
 	box-sizing: border-box;
 }
 
-:root {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
-	font-size: 16px;
-	line-height: 24px;
-	font-weight: 400;
-
-	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
-
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-text-size-adjust: 100%;
-}
-
-a {
-	font-weight: 500;
-	color: #646cff;
-	text-decoration: inherit;
-}
-
-a:hover {
-	color: #535bf2;
-}
-
 body {
 	margin: 0;
 	display: flex;
-	place-items: center;
-	min-width: 320px;
-	min-height: 100vh;
-	background-color: #e5e5f7;
-	opacity: 0.8;
-	background-size: 10px 10px;
-	background-image: repeating-linear-gradient(45deg, #282938 0, #282938 1px, #322f3d 0, #322f3d 60%);
-}
-
-h1 {
-	font-size: 3.2em;
-	line-height: 1.1;
-}
-
-#app {
-	max-width: 1280px;
-	margin: 0 auto;
-	padding: 2rem;
-	text-align: center;
-}
-
-.logo {
-	height: 6em;
-	padding: 1.5em;
-	will-change: filter;
-}
-
-.logo:hover {
-	filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.vanilla:hover {
-	filter: drop-shadow(0 0 2em #f7df1eaa);
-}
-
-.card {
-	padding: 2em;
-}
-
-.read-the-docs {
-	color: #888;
-}
-
-button {
-	border-radius: 8px;
-	border: 1px solid transparent;
-	padding: 0.6em 1.2em;
-	font-size: 1em;
-	font-weight: 500;
-	font-family: inherit;
-	background-color: #1a1a1a;
-	cursor: pointer;
-	transition: border-color 0.25s;
-}
-
-button:hover {
-	border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-	outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-	:root {
-		color: #213547;
-		background-color: #ffffff;
-	}
-
-	a:hover {
-		color: #747bff;
-	}
-
-	button {
-		background-color: #f9f9f9;
-	}
-}
-
-.keyboard {
-	position: relative;
-	padding: 90px 40px 0 150px;
-	border: 1px solid #160801;
-	border-radius: 1em;
-	background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/187/vwood.png);
-	box-shadow: 0 0 50px rgba(0, 0, 0, 0.5) inset, 0 1px rgba(212, 152, 125, 0.2) inset, 0 5px 15px rgba(0, 0, 0, 0.5);
-	user-select: none;
-}
-
-.keyboard h1,
-.keyboard h2 {
-	line-height: initial;
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-style: italic;
-	color: rgb(255, 242, 181);
-	background-image: linear-gradient(rgb(255, 242, 181) 28%,
-			rgb(150, 127, 58) 40%,
-			rgb(255, 242, 181) 54%);
-	text-align: center;
-	-webkit-background-clip: text;
-	background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-
-.keyboard h1 {
-	font-weight: bold;
-	position: absolute;
-	top: -5px;
-	left: 50%;
-	transform: translateX(-50%);
-	font-size: 40px;
-}
-
-.keyboard h2 {
-	font-weight: normal;
-	font-size: 18px;
-	position: relative;
-	margin-bottom: 9px;
-}
-
-.keyboard .controls {
-	position: absolute;
-	bottom: 0;
-	width: 150px;
-	left: 0;
-}
-
-.switch-group {
-	padding: 0 20px;
-	display: flex;
-	margin-bottom: 40px;
-}
-
-.switch {
-	height: 30px;
-	width: 100%;
-	border-radius: 0;
-	background-color: #e4e0dd;
-	cursor: pointer;
-	color: #303030;
-	border: 2px outset #c9c9c9;
-	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 100vh;
+	background-color: #282938;
 }
 
-.switch:active {
-	background-color: #b9b9b9;
-	border-color: #717171;
-}
-
-.switch:first-child {
-	border-top-left-radius: 4px;
-	border-bottom-left-radius: 4px;
-}
-
-.switch:last-child {
-	border-top-right-radius: 4px;
-	border-bottom-right-radius: 4px;
-}
-
-.keys {
+.piano {
 	display: flex;
+	position: relative;
+	padding: 40px;
+	padding-bottom: 0;
+	background-color: #341304;
+	border: 1px solid #160801;
+	border-radius: 16px;
+	user-select: none;
 }
 
 .key {
 	width: 75px;
 	height: 350px;
-	border: 3px outset #dddddd;
+	border: 2px outset #dddddd;
 	border-radius: 0 0 6px 6px;
-	box-shadow: -1px 0 0 rgba(255, 255, 255, 0.8) inset, 0 0 5px #ccc inset, 0 0 3px rgba(0, 0, 0, 0.2);
 	background: white;
-	background: linear-gradient(to bottom, #eee 0%, #fff 100%);
-	margin-bottom: -5px;
-}
-
-.key:first-child {
-	border-top-left-radius: 6px;
-}
-
-.key:last-child {
-	border-top-right-radius: 6px;
+	margin-bottom: -8px;
 }
 
 .key.black {
@@ -230,23 +46,17 @@ button:focus-visible {
 	margin-right: -24px;
 	width: 50px;
 	border-color: #5f5f5f;
-	box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.2) inset, 0 -5px 2px 3px rgba(0, 0, 0, 0.6) inset, 0 2px 4px rgba(0, 0, 0, 0.5);
-	background: black;
-	background: linear-gradient(45deg, #222 0%, #555 100%)
+	background-color: #222;
 }
 
-.key:active,
-.key.active {
-	box-shadow: 2px 0 3px rgba(0, 0, 0, 0.1) inset, -5px 5px 20px rgba(0, 0, 0, 0.2) inset, 0 0 3px rgba(0, 0, 0, 0.2);
-	background: linear-gradient(to bottom, #fff 0%, #e9e9e9 100%);
+.key.white.active {
+	background-color: #ddd
 }
 
-.key.black:active,
 .key.black.active {
-	box-shadow: -1px -1px 2px rgba(255, 255, 255, 0.2) inset, 0 -2px 2px 3px rgba(0, 0, 0, 0.6) inset, 0 1px 2px rgba(0, 0, 0, 0.5);
-	background: linear-gradient(to right, #444 0%, #222 100%)
+	background-color: #000
 }
 
-.key.white+.key.white {
+.key.white + .key.white {
 	margin-left: 2px;
 }
