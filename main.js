@@ -5,7 +5,7 @@ import { generateNotes } from './util';
 
 const context = new Context({
 	latencyHint: 'interactive',
-	lookAhead: 0.01,
+	lookAhead: 0,
 });
 setContext(context);
 
@@ -27,7 +27,7 @@ const elements = Object.entries(selectors).reduce((acc, [key, value]) => {
 let volume = 0;
 const synth = new PolySynth(Synth, {
 	oscillator: {
-		type: 'triangle',
+		type: 'sine',
 	},
 	envelope: {
 		attack: 0.01,
