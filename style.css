@@ -250,3 +250,8 @@ button:focus-visible {
 .key.white+.key.white {
 	margin-left: 2px;
 }
+
+.meter {
+	width: 100%;
+	padding: 0 10px;
+}
