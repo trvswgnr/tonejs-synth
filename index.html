@@ -1,34 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app">
-		<div class="piano">
-			<div class="key white" data-note="C3" data-key="a"></div>
-			<div class="key black" data-note="C#3" data-key="w"></div>
-			<div class="key white" data-note="D3" data-key="s"></div>
-			<div class="key black" data-note="D#3" data-key="e"></div>
-			<div class="key white" data-note="E3" data-key="d"></div>
-			<div class="key white" data-note="F3" data-key="f"></div>
-			<div class="key black" data-note="F#3" data-key="t"></div>
-			<div class="key white" data-note="G3" data-key="g"></div>
-			<div class="key black" data-note="G#3" data-key="y"></div>
-			<div class="key white" data-note="A3" data-key="h"></div>
-			<div class="key black" data-note="A#3" data-key="u"></div>
-			<div class="key white" data-note="B3" data-key="j"></div>
-			<div class="key white" data-note="C4" data-key="k"></div>
-			<div class="key black" data-note="C#4" data-key="o"></div>
-			<div class="key white" data-note="D4" data-key="l"></div>
-			<div class="key black" data-note="D#4" data-key="p"></div>
-			<div class="key white" data-note="E4" data-key=";"></div>
-			<div class="key white" data-note="F4" data-key="'"></div>
-		</div>
-	</div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Vite App</title>
+	<link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <div class="piano">
+    <div class="key white" data-note="C3" data-key="a"></div>
+    <div class="key black" data-note="C#3" data-key="w"></div>
+    <div class="key white" data-note="D3" data-key="s"></div>
+    <div class="key black" data-note="D#3" data-key="e"></div>
+    <div class="key white" data-note="E3" data-key="d"></div>
+    <div class="key white" data-note="F3" data-key="f"></div>
+    <div class="key black" data-note="F#3" data-key="t"></div>
+    <div class="key white" data-note="G3" data-key="g"></div>
+    <div class="key black" data-note="G#3" data-key="y"></div>
+    <div class="key white" data-note="A3" data-key="h"></div>
+    <div class="key black" data-note="A#3" data-key="u"></div>
+    <div class="key white" data-note="B3" data-key="j"></div>
+    <div class="key white" data-note="C4" data-key="k"></div>
+    <div class="key black" data-note="C#4" data-key="o"></div>
+    <div class="key white" data-note="D4" data-key="l"></div>
+    <div class="key black" data-note="D#4" data-key="p"></div>
+    <div class="key white" data-note="E4" data-key=";"></div>
+    <div class="key white" data-note="F4" data-key="'"></div>
+    </div>
+
+	<script src="https://cdn.jsdelivr.net/npm/tone@14.7.77/build/Tone.min.js"></script>
+	<script src="main.js"></script>
+</body>
+
 </html>
