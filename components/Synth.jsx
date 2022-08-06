@@ -9,12 +9,10 @@ export const SynthController = () => {
 		oscillator: 'square',
 		detune: 0,
 		volume: -3,
-		octave: 3,
-		maxVoices: 3
+		octave: 3
 	});
 
 	const [notes, setNotes] = React.useState(generateNotes(18, options.octave));
-
 	
 	React.useEffect(() => {
 		setNotes(generateNotes(18, options.octave));
