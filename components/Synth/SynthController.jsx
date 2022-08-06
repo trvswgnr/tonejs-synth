@@ -1,7 +1,8 @@
 import React, { createContext, useState } from 'react';
 import { Keyboard } from './Keyboard';
 import { ControlPanel } from './ControlPanel';
-import { useSynth, useNotes, useTriggerSynth } from '../hooks/index';
+import { useSynth, useNotes, useTriggerSynth } from './hooks';
+import styles from './styles/Synth.module.css';
 
 export const SynthContext = createContext();
 
@@ -20,7 +21,7 @@ export function SynthController() {
 
 	return (
 		<SynthContext.Provider value={{ options, setOptions, notes }}>
-			<div className="synth">
+			<div className={styles.synth}>
 				<ControlPanel />
 				<Keyboard />
 			</div>

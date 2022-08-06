@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import style from '../styles/Key.module.css';
 
 export function useTriggerSynth({ synth, notes, options }) {
 	useEffect(() => {
@@ -14,13 +15,13 @@ export function useTriggerSynth({ synth, notes, options }) {
 			}
 
 			if (type === 'attack') {
-				document.querySelector(`[data-char="${e.key}"]`).classList.add('active');
+				document.querySelector(`[data-char="${e.key}"]`).classList.add(style.active);
 				synth.triggerRelease([note]);
 				synth.triggerAttack([note]);
 				return true;
 			}
 			if (type === 'release') {
-				document.querySelector(`[data-char="${e.key}"]`).classList.remove('active');
+				document.querySelector(`[data-char="${e.key}"]`).classList.remove(style.active);
 				synth.triggerRelease([note]);
 				return true;
 			}
@@ -31,7 +32,7 @@ export function useTriggerSynth({ synth, notes, options }) {
 		function mouseSynthTrigger(e) {
 			const type = e.type === 'mousedown' ? 'attack' : 'release';
 
-			if (type === 'attack' && e.target.classList.contains('key')) {
+			if (type === 'attack' && e.target.classList.contains(style.key)) {
 				const { note } = notes.find(note => note.char === e.target.innerHTML) || {};
 				synth.releaseAll();
 				synth.triggerAttack(note);

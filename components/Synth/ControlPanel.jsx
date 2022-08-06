@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 import { Button } from './Button';
 import { ControlButtons } from './ControlButtons';
-import { SynthContext } from './Synth';
+import { SynthContext } from './SynthController';
+import styles from './styles/Synth.module.css';
 
 export function ControlPanel() {
 	const { options, setOptions } = useContext(SynthContext);
@@ -11,7 +12,7 @@ export function ControlPanel() {
 	};
 
 	return (
-		<div className="controls">
+		<div className={styles.controls}>
 			<ControlButtons label="Octave">
 				<Button onClick={() => updateSynth('octave', options.octave - 1)}>-</Button>
 				<Button onClick={() => updateSynth('octave', options.octave + 1)}>+</Button>
