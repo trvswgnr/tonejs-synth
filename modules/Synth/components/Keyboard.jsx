@@ -1,8 +1,7 @@
+import { useContext } from 'react';
 import { Key } from './Key';
-import styles from './SynthController.module.css';
-import { useKeyPress, useSynth } from '../hooks';
-import { useEffect, useContext, useRef, useState } from 'react';
 import { SynthContext } from './SynthController';
+import styles from './SynthController.module.css';
 
 export function Keyboard() {
 	const { notes } = useContext(SynthContext);
