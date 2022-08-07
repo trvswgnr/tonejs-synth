@@ -13,7 +13,8 @@
 	font-weight: 600;
 }
 
-.button:active {
+.button:active,
+.button.active {
 	background-color: #b9b9b9;
 	border-color: #717171;
 }
@@ -28,13 +29,14 @@
 	border-bottom-right-radius: 4px;
 }
 
-.panic {
+.button.panic {
 	background-color: #242323;
 	color: #e20000;
-	border-color: #b18d8d;
+	border-color: #e20000;
+	border-radius: 100px;
 }
 
-.panic:active {
+.button.panic:active {
 	background-color: #000000;
 	color: #b70202;
 	border-color: #a01f1f;
