@@ -2,6 +2,8 @@
 
 A relatively simple synthesizer created with Tone.js and Next.js using React.
 
+![image](https://user-images.githubusercontent.com/8974888/183277108-0b300fb2-519a-4508-bbe8-ac5cd53cacaa.png)
+
 ## Getting Started
 
 Install dependencies, then run the development server:
