@@ -4,25 +4,33 @@ import { SynthContext } from './SynthController';
 
 export function SoundGenerator() {
 	const { options, notes } = useContext(SynthContext);
-	const { keyPressed, keyReleased } = useKeyPress();
+	const { keyPressed, keyReleased, activeKeys } = useKeyPress();
 	const synth = useSynth(options);
 
 	useEffect(() => {
 		const note = notes.find(note => note.char === (keyPressed || keyReleased));
 
-		if (!note)
+		if (!note) {
 			return;
+		}
 
 		try {
+			if (!activeKeys.length) {
+				synth.releaseAll();
+				return;
+			}
+
 			if (keyPressed) {
 				synth.triggerAttack([note.note]);
+				return;
 			}
 
 			if (keyReleased) {
 				synth.triggerRelease([note.note]);
+				return;
 			}
 		} catch (e) {
 			console.log(e);
 		}
-	}, [keyPressed, keyReleased, notes, synth]);
+	}, [keyPressed, keyReleased, notes, synth, activeKeys]);
 }

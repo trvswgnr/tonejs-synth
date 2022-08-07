@@ -28,12 +28,14 @@ export function useKeyPress() {
 	const mouseEventHandler = useCallback(({ type, target }) => {
 		if (type === 'pointerdown') {
 			setKeyReleased(null);
+			setKeyPressed(null);
 			setKeyPressed(target.dataset.char);
 			setActiveKeys([...activeKeys, target.dataset.char]);
 			return;
 		}
 
 		setKeyPressed(null);
+		setKeyReleased(null);
 		setKeyReleased(keyPressed);
 		setActiveKeys([]);
 		return;

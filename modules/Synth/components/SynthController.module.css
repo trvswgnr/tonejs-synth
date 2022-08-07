@@ -16,8 +16,21 @@
 .controls {
 	display: flex;
 	margin-bottom: 24px;
+	align-items: flex-end;
+}
+
+.control-item + .control-item {
+	margin-left: 24px;
 }
 
 .flex {
 	display: flex;
+}
+
+.fw-normal {
+	font-weight: normal;
+}
+
+.fw-bold {
+	font-weight: bold;
 }

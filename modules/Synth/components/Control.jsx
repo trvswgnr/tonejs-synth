@@ -1,8 +1,8 @@
 import styles from './SynthController.module.css';
 
-export function Buttons({ label, value, children }) {
+export function Group({ label, value, children }) {
 	return (
-		<div className="control-item control-item-buttons">
+		<div className={styles['control-item']}>
 			<Label label={label} value={value} />
 			<div className={styles.flex}>
 				{children}
@@ -12,10 +12,11 @@ export function Buttons({ label, value, children }) {
 }
 
 export function Label({ label, value }) {
-	return (label || value) && <h3 className="control-label">{label}{(label && value) && ': '}{value}</h3>;
+	console.log(styles);
+	return (label || value) && <h3 className="control-info"><span className="control-label">{label}</span>{(label && value) && ': '}<span className={styles['fw-normal']}>{value}</span></h3>;
 }
 
 export const Control = {
-	Buttons,
+	Group,
 	Label,
 };
