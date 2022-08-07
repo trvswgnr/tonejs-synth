@@ -1,6 +1,5 @@
 import { Button } from './Button';
 import { ControlButtons } from './ControlButtons';
-import { useOptions } from '../hooks';
 import styles from './SynthController.module.css';
 import { useContext, useState } from 'react';
 import { SynthContext } from './SynthController';

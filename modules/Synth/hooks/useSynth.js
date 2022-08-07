@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { PolySynth, Synth, Context, setContext } from 'tone';
-import { useOptions } from './index';
 
 export const useSynth = (options) => {
 	const [synth, setSynth] = useState(null);
