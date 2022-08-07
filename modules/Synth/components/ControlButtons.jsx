@@ -1,4 +1,4 @@
-import style from './styles/Synth.module.css';
+import style from './SynthController.module.css';
 
 export function ControlButtons({ label, children }) {
 	return (

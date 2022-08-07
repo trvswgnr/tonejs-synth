@@ -1,8 +1,8 @@
-import React, { createContext, useState } from 'react';
 import { Keyboard } from './Keyboard';
 import { ControlPanel } from './ControlPanel';
-import { useSynth, useNotes, useTriggerSynth } from './hooks';
-import styles from './styles/Synth.module.css';
+import styles from './SynthController.module.css';
+import { createContext, useEffect, useState } from 'react';
+import { generateNotes } from '../lib';
 
 export const SynthContext = createContext();
 
@@ -13,11 +13,12 @@ export function SynthController() {
 		volume: -3,
 		octave: 3
 	});
-
-	const synth = useSynth(options);
-	const notes = useNotes(options);
-
-	useTriggerSynth({ synth, notes, options });
+	
+	const [notes, setNotes] = useState(generateNotes(18, options.octave));
+	useEffect(() => {
+		console.log('notes changed');
+		setNotes(generateNotes(18, options.octave));
+	}, [options]);
 
 	return (
 		<SynthContext.Provider value={{ options, setOptions, notes }}>

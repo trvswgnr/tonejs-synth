@@ -1,4 +1,5 @@
 import { Frequency } from 'tone';
+import { useKeyPress } from '../hooks/useKeyPress';
 
 /**
  * Generate note names for a specified number of notes.
