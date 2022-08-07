@@ -1,6 +1,7 @@
 .synth {
 	position: relative;
-	padding: 10px 40px 0 40px;
+	margin-top: -20px;
+	padding: 20px 40px 0 40px;
 	border: 1px solid #160801;
 	border-radius: 1em;
 	background:
@@ -20,7 +21,12 @@
 }
 
 .control-item + .control-item {
-	margin-left: 24px;
+	margin-left: 48px;
+}
+
+.control-info {
+	margin: 0;
+	margin-bottom: 8px;
 }
 
 .flex {
