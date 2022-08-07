@@ -11,16 +11,30 @@ export function ControlPanel() {
 		setOptions({ ...options, [prop]: val });
 	};
 
+	const oscillatorChoices = [
+		{ label: 'Square', value: 'square' },
+		{ label: 'Sine', value: 'sine' },
+		{ label: 'Sawtooth', value: 'sawtooth' },
+		{ label: 'Triangle', value: 'triangle' },
+		{ label: 'PWM', value: 'pwm' }
+	];
+
 	return (
 		<div className={styles.controls}>
+			<Control.Group>
+				<Button type="panic" onClick={() => updateOption('panic')}>!</Button>
+			</Control.Group>
+
 			<Control.Group label="Octave" value={options.octave}>
 				<Button onClick={() => updateOption('octave', options.octave - 1)}>-</Button>
 				<Button onClick={() => updateOption('octave', options.octave + 1)}>+</Button>
 			</Control.Group>
 
+
 			<Control.Group>
-				<Button type="panic" onClick={() => updateOption('panic')}>!</Button>
+				<Control.MultiSelect label="Oscillator" active={options.oscillator} options={oscillatorChoices} onChange={val => updateOption('oscillator', val)} />	
 			</Control.Group>
+
 		</div>
 	);
 }
