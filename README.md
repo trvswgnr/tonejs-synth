@@ -1,6 +1,6 @@
 # Tone.js Synth
 
-A relatively simple synthesizer created with Tone.js and Next.js using React.
+A relatively simple synthesizer created with Tone.js and Next.js using React that can be played with the mouse or keyboard.
 
 ![image](https://user-images.githubusercontent.com/8974888/183277108-0b300fb2-519a-4508-bbe8-ac5cd53cacaa.png)
 
