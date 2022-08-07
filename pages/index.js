@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { SynthController } from '../components/Synth';
+import { SynthController } from '../modules/Synth';
 
 export default function Home() {
 	return (

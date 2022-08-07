@@ -1,0 +1,6 @@
+{
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.patterns": {
+		"*.jsx": "${capture}.js, ${capture}.module.css"
+	}
+}

@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Key } from './Key';
 import { SynthContext } from './SynthController';
-import styles from './styles/Synth.module.css';
+import styles from './SynthController.module.css';
 
 export function Keyboard() {
 	const { notes } = useContext(SynthContext);

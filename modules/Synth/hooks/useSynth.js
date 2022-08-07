@@ -4,6 +4,9 @@ import { PolySynth, Synth, Context, setContext } from 'tone';
 export const useSynth = (options) => {
 	const [synth, setSynth] = useState(null);
 	useEffect(() => {
+		if (!options) {
+			return;
+		}
 		const synth = new PolySynth(Synth, {
 			oscillator: {
 				type: options.oscillator
@@ -21,8 +24,11 @@ export const useSynth = (options) => {
 		synth.toDestination();
 
 		return () => {
-			synth.dispose();
-			setSynth(null);
+			if (synth) {
+				synth.releaseAll();
+				synth.dispose();
+				setSynth(null);
+			}
 		};
 	}, [options]);
 
