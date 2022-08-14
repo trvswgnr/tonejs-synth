@@ -19,26 +19,15 @@ export function Sequencer() {
 		}
 		
 		synth.connect(gain);
-		// const synth = new Tone.MonoSynth({
-		// 	oscillator: {
-		// 		type: options.oscillator,
-		// 	},
-		// 	envelope: {
-		// 		attack: 0.001,
-		// 		decay: 0.1,
-		// 		sustain: 0.5,
-		// 		release: 0.1,
-		// 	},
-		// 	filter: {
-		// 		Q: 10,
-		// 		type: 'highpass',
-		// 		frequency: 20000,
-		// 	},
-		// }).toDestination();
 		const seq = new Tone.Sequence((time, note) => {
-			synth.triggerAttackRelease(note, 0.1, time);
-			// subdivisions are given as subarrays
-		}, ["C4", ["E4", "D4", "E4"], "G4", ["A4", "G4"]]);
+			if (note === '_') {
+				return;
+			}
+			let octave = note.replace(/[^0-9-]/gi, ''); // get octave
+			note = note.replace(/[0-9-]/gi, ''); // remove octave
+			octave = options.octave + Number(octave); // add octaves
+			synth.triggerAttackRelease(note + octave, 0.1, time); // play note
+		}, ["E0", ["E0", "_", "E0"], "G0", ["A0", "G0"]]); // subdivisions are given as subarrays
 
 		if (playing) {
 			seq.start(0);
@@ -49,13 +38,8 @@ export function Sequencer() {
 			seq.stop();
 			Tone.Transport.stop();
 		};
-	} , [playing, options.oscillator, gain, synth]);
+	} , [playing, options, gain, synth]);
 
 
-	return (
-		<div>
-			<Button onClick={handleClick}>{!playing ? 'Play' : 'Pause' }</Button>
-			<p>{options.oscillator}</p>
-		</div>
-	);
+	return <Button onClick={handleClick}>{!playing ? 'Play' : 'Pause' }</Button>;
 }
