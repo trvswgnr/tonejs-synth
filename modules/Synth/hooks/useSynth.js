@@ -14,19 +14,10 @@ export const useSynth = (options) => {
 		});
 
 		setSynth(synth);
-
-		const context = new Context({
-			latencyHint: 'interactive',
-			lookAhead: 0,
-		});
-		setContext(context);
 		
-		synth.toDestination();
-
 		return () => {
 			if (synth) {
 				synth.releaseAll();
-				synth.dispose();
 				setSynth(null);
 			}
 		};
