@@ -14,7 +14,7 @@ export function Group({ label, value, children }) {
 }
 
 export function Label({ label, value }) {
-	return (label || value) && <h3 className={styles['control-info']}><span className="control-label">{label}</span>{(label && value) && ': '}<span className={styles['fw-normal']}>{value}</span></h3>;
+	return (label || typeof value !== 'undefined') && <h3 className={styles['control-info']}><span className="control-label">{label}</span>{(label && typeof value !== 'undefined') && ': '}<span className={styles['fw-normal']}>{value}</span></h3>;
 }
 
 export function MultiSelect({ active, name, label, value, options, onChange }) {
