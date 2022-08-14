@@ -14,7 +14,6 @@ export function Group({ label, value, children }) {
 }
 
 export function Label({ label, value }) {
-	console.log(styles);
 	return (label || value) && <h3 className={styles['control-info']}><span className="control-label">{label}</span>{(label && value) && ': '}<span className={styles['fw-normal']}>{value}</span></h3>;
 }
 

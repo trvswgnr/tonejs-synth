@@ -3,13 +3,19 @@ import { useKeyPress, useSynth } from '../hooks';
 import { SynthContext } from './SynthController';
 
 export function SoundGenerator() {
-	const { options, notes } = useContext(SynthContext);
+	const { options, notes, gain } = useContext(SynthContext);
 	const { keyPressed, keyReleased, activeKeys } = useKeyPress();
 	const synth = useSynth(options);
-
+	
+	useEffect(() => {
+		if (synth && gain) {
+			synth.connect(gain);
+		}
+	} , [synth, gain]);
+	
 	useEffect(() => {
 		const note = notes.find(note => note.char === (keyPressed || keyReleased));
-
+		
 		if (!note) {
 			return;
 		}
